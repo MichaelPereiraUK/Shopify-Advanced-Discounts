@@ -12,7 +12,7 @@ module = "./src/DiscountFunctionSettings.jsx"
 target = "admin.discount-details.function-settings.render"
 
 [[extensions.metafields]]
-namespace = "$app"
+namespace = "buy-x-range-get-y"
 key = "function-configuration"
 
 

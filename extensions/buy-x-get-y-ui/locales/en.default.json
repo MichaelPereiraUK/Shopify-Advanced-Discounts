@@ -1,20 +1,29 @@
 {
-  "name": "[Example] Discount UI extension",
-  "description": "Discount UI extension",
-  "title": "Select which discount types to apply at checkout",
+  "name": "Buy X range, get Y",
+  "description": "Customer must buy every product in the X range to get Y free",
+  "title": "Buy X range, get Y",
   "loading": "Loading...",
-  "label": "Percentage off",
-  "collections": {
-    "buttonLabel": "Choose collections",
-    "allProducts": "All products",
-    "collections": "Collections",
-    "appliesTo": "Applies to"
+  "x": {
+    "heading": "Customer buys",
+    "help": "The customer must have every one of these products or variants in their cart. Selecting all of a product's variants means any variant of that product counts.",
+    "browse": "Browse products",
+    "empty": "No products selected"
   },
-  "discountClasses": {
-    "product": "Product discount",
-    "order": "Order discount",
-    "shipping": "Shipping discount"
+  "y": {
+    "heading": "Customer gets",
+    "help": "These are added to the cart automatically and made free once every item above is in the cart. For products with several variants, tick the variants to give; each ticked variant is added.",
+    "browse": "Browse products",
+    "empty": "No variants selected"
   },
-  "error": "Unable to update discount types. Please try again."
+  "maxUses": {
+    "heading": "Maximum discount uses per order",
+    "label": "Set a maximum number of uses per order",
+    "inputLabel": "Number of uses per order"
+  },
+  "errors": {
+    "maxUses": "Uses per order must be a whole number of 1 or more.",
+    "required": "Select at least one product the customer buys and one variant the customer gets.",
+    "overlap": "A product can't be in both \"Customer buys\" and \"Customer gets\".",
+    "storefront": "The discount was saved, but the storefront auto-add settings couldn't be updated. Save again to retry."
+  }
 }
-

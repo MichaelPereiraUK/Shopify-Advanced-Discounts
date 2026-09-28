@@ -2,14 +2,25 @@ query CartInput {
   cart {
     lines {
       id
-      cost {
-        subtotalAmount {
-          amount
+      quantity
+      ruleAttribute: attribute(key: "_bxgy_rule") {
+        value
+      }
+      merchandise {
+        __typename
+        ... on ProductVariant {
+          id
+          product {
+            id
+          }
         }
       }
     }
   }
   discount {
     discountClasses
+    metafield(namespace: "buy-x-range-get-y", key: "function-configuration") {
+      jsonValue
+    }
   }
 }

@@ -1,0 +1,31 @@
+{% assign bxgy_rules = app.metafields["$app:bxgy"].rules.value %}
+{% if bxgy_rules != blank %}
+  <script type="application/json" id="bxgy-auto-add-config">
+    {
+      "rules": {{ bxgy_rules | json }},
+      "refresh": {{ block.settings.refresh | json }}
+    }
+  </script>
+  <script src="{{ 'auto-add.js' | asset_url }}" defer></script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "t:embed.name",
+  "target": "body",
+  "settings": [
+    {
+      "type": "select",
+      "id": "refresh",
+      "label": "t:embed.refresh.label",
+      "info": "t:embed.refresh.info",
+      "default": "cart_page",
+      "options": [
+        { "value": "none", "label": "t:embed.refresh.none" },
+        { "value": "cart_page", "label": "t:embed.refresh.cart_page" },
+        { "value": "always", "label": "t:embed.refresh.always" }
+      ]
+    }
+  ]
+}
+{% endschema %}

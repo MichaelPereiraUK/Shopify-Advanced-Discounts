@@ -1,0 +1,57 @@
+{
+  "payload": {
+    "export": "cart-lines-discounts-generate-run",
+    "target": "cart.lines.discounts.generate.run",
+    "input": {
+      "cart": {
+        "lines": [
+          {
+            "id": "gid://shopify/CartLine/0",
+            "quantity": 1,
+            "ruleAttribute": null,
+            "merchandise": {
+              "__typename": "ProductVariant",
+              "id": "gid://shopify/ProductVariant/10",
+              "product": {
+                "id": "gid://shopify/Product/1"
+              }
+            }
+          },
+          {
+            "id": "gid://shopify/CartLine/1",
+            "quantity": 1,
+            "ruleAttribute": null,
+            "merchandise": {
+              "__typename": "ProductVariant",
+              "id": "gid://shopify/ProductVariant/20",
+              "product": {
+                "id": "gid://shopify/Product/2"
+              }
+            }
+          },
+          {
+            "id": "gid://shopify/CartLine/2",
+            "quantity": 1,
+            "ruleAttribute": null,
+            "merchandise": {
+              "__typename": "ProductVariant",
+              "id": "gid://shopify/ProductVariant/90",
+              "product": {
+                "id": "gid://shopify/Product/9"
+              }
+            }
+          }
+        ]
+      },
+      "discount": {
+        "discountClasses": [
+          "PRODUCT"
+        ],
+        "metafield": null
+      }
+    },
+    "output": {
+      "operations": []
+    }
+  }
+}

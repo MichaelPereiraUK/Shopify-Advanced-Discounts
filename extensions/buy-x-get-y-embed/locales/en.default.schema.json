@@ -1,0 +1,12 @@
+{
+  "embed": {
+    "name": "Buy X range, get Y auto-add",
+    "refresh": {
+      "label": "After a free item is added",
+      "info": "The \"bxgy:cart-updated\" event is always fired on document so the theme can refresh its cart drawer.",
+      "none": "Do nothing",
+      "cart_page": "Reload the page when on the cart page",
+      "always": "Always reload the page"
+    }
+  }
+}

@@ -1,4 +1,4 @@
 {
-  "name": "buy-x-get-y",
-  "description": "buy-x-get-y"
+  "name": "Buy X range, get Y",
+  "description": "Customer must buy every product in the X range to get Y free"
 }

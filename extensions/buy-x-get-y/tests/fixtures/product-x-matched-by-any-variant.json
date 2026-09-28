@@ -1,0 +1,100 @@
+{
+  "payload": {
+    "export": "cart-lines-discounts-generate-run",
+    "target": "cart.lines.discounts.generate.run",
+    "input": {
+      "cart": {
+        "lines": [
+          {
+            "id": "gid://shopify/CartLine/0",
+            "quantity": 1,
+            "ruleAttribute": null,
+            "merchandise": {
+              "__typename": "ProductVariant",
+              "id": "gid://shopify/ProductVariant/11",
+              "product": {
+                "id": "gid://shopify/Product/1"
+              }
+            }
+          },
+          {
+            "id": "gid://shopify/CartLine/1",
+            "quantity": 1,
+            "ruleAttribute": null,
+            "merchandise": {
+              "__typename": "ProductVariant",
+              "id": "gid://shopify/ProductVariant/20",
+              "product": {
+                "id": "gid://shopify/Product/2"
+              }
+            }
+          },
+          {
+            "id": "gid://shopify/CartLine/2",
+            "quantity": 1,
+            "ruleAttribute": null,
+            "merchandise": {
+              "__typename": "ProductVariant",
+              "id": "gid://shopify/ProductVariant/90",
+              "product": {
+                "id": "gid://shopify/Product/9"
+              }
+            }
+          }
+        ]
+      },
+      "discount": {
+        "discountClasses": [
+          "PRODUCT"
+        ],
+        "metafield": {
+          "jsonValue": {
+            "ruleId": "bxgy_test",
+            "xItems": [
+              {
+                "type": "product",
+                "id": "gid://shopify/Product/1"
+              },
+              {
+                "type": "variant",
+                "id": "gid://shopify/ProductVariant/20"
+              }
+            ],
+            "yVariantIds": [
+              "gid://shopify/ProductVariant/90"
+            ],
+            "maxUsesPerOrderEnabled": false,
+            "maxUsesPerOrder": 1
+          }
+        }
+      }
+    },
+    "output": {
+      "operations": [
+        {
+          "productDiscountsAdd": {
+            "candidates": [
+              {
+                "message": "Free gift",
+                "targets": [
+                  {
+                    "cartLine": {
+                      "id": "gid://shopify/CartLine/2",
+                      "quantity": 1
+                    }
+                  }
+                ],
+                "value": {
+                  "percentage": {
+                    "value": 100
+                  }
+                }
+              }
+            ],
+            "selectionStrategy": "FIRST"
+          }
+        }
+      ]
+    }
+  }
+}

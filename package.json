@@ -4,10 +4,16 @@
   "license": "UNLICENSED",
   "scripts": {
     "shopify": "shopify",
+    "build:embed": "esbuild extensions-src/buy-x-get-y-embed/auto-add.ts --bundle --format=iife --target=es2020 --outfile=extensions/buy-x-get-y-embed/assets/auto-add.js \"--banner:js=// Generated from extensions-src/buy-x-get-y-embed/auto-add.ts by npm run build:embed. Do not edit.\"",
+    "watch:embed": "npm run build:embed -- --watch",
+    "typecheck:embed": "tsc -p extensions-src/buy-x-get-y-embed",
+    "prebuild": "npm run typecheck:embed && npm run build:embed",
     "build": "shopify app build",
+    "predev": "npm run build:embed",
     "dev": "shopify app dev",
     "info": "shopify app info",
     "generate": "shopify app generate",
+    "predeploy": "npm run typecheck:embed && npm run build:embed",
     "deploy": "shopify app deploy"
   },
   "dependencies": {},
@@ -18,5 +24,9 @@
   "private": true,
   "workspaces": [
     "extensions/*"
-  ]
+  ],
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "typescript": "^5.8.3"
+  }
 }
